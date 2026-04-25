@@ -1,14 +1,10 @@
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras import layers
-
+from tensorflow.keras import layers, models
 """
 Treinamento de CNN para classificação de dígitos manuscritos (MNIST)
 Projeto: Intensivo Maker – Edge AI | PNAAT
 """
-
-import tensorflow as tf
-from tensorflow.keras import layers, models
 
 print("Carregando dataset MNIST...")
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
@@ -54,8 +50,8 @@ history = model.fit(
 
 test_loss, test_acc = model.evaluate(x_test, y_test, verbose=0)
 print(f"\n{'='*50}")
-print(f"  Acurácia no conjunto de teste : {test_acc * 100:.2f} %")
-print(f"  Loss no conjunto de teste     : {test_loss:.4f}")
+print(f"  Acurácia nos testes : {test_acc * 100:.2f} %")
+print(f"  Loss nos testes     : {test_loss:.4f}")
 print(f"{'='*50}")
 
 val_acc_final = history.history["val_accuracy"][-1]
@@ -63,4 +59,4 @@ print(f"  Acurácia de validação (última época): {val_acc_final * 100:.2f} %
 print(f"{'='*50}\n")
 
 model.save("model.h5")
-print("Modelo salvo em: model.h5")
+print("Modelo salvo: model.h5")
