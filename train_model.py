@@ -1,10 +1,6 @@
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers, models
-"""
-Treinamento de CNN para classificação de dígitos manuscritos (MNIST)
-Projeto: Intensivo Maker – Edge AI | PNAAT
-"""
 
 print("Carregando dataset MNIST...")
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
